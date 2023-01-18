@@ -1,5 +1,15 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react';
+import React from "react";
 
+const Overview = (props) => {
+  const { tasks } = props;
 
-export default Tasks;
+  return (
+    <ul>
+      {tasks.map((task) => {
+        return <li key={task.id}>{task.text}</li>;
+      })}
+    </ul>
+  );
+};
+
+export default Overview;
